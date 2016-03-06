@@ -1,0 +1,41 @@
+<div style="text-align:center;">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Page Title:</strong>
+  <%= @page_design.page_title %>
+</p>
+<p>
+  <strong>Font Family:</strong>
+  <%= @page_design.page_font %>
+</p>
+<p>
+  <strong>Header Background color:</strong>
+  <%= @page_design.header_bg_color %>
+</p>
+<p>
+  <strong>Body Background color:</strong>
+  <%= @page_design.body_bg_color %>
+</p>
+<p>
+  <strong>About Background color:</strong>
+  <%= @page_design.about_bg_color %>
+</p>
+<p>
+  <strong>Services Background color:</strong>
+  <%= @page_design.services_bg_color %>
+</p>
+<p>
+  <strong>Portfolio Background color:</strong>
+  <%= @page_design.portfolio_bg_color %>
+</p>
+<p>
+  <strong>Footer Background color:</strong>
+  <%= @page_design.footer_bg_color %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_page_design_path(@page_design) %> |
+<%= link_to 'Back', page_designs_path %>
+</div>

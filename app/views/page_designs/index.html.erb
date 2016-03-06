@@ -1,0 +1,38 @@
+<div style="text-align:center;">
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Page Designs</h1>
+<%unless @page_design.nil?%>
+  <table align="center">
+    <thead>
+      <tr>
+        <th>Page Title</th>
+        <th>Font Family</th>
+        <th>Header Background color</th>
+        <th>Body Background color</th>
+        <th colspan="6"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <td><%= @page_design.page_title %></td>
+          <td><%= @page_design.page_font %></td>
+          <td><%= @page_design.header_bg_color %></td>
+          <td><%= @page_design.body_bg_color %></td>
+          <td><%= link_to 'Show', @page_design %>&nbsp;&nbsp;</td>
+          <td><%= link_to 'Edit', edit_page_design_path(@page_design) %>&nbsp;</td>
+          <td><%= link_to 'Destroy', @page_design, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    </tbody>
+  </table>
+<%else%>
+<p>Page design is not found </p>
+<%end%>
+
+<br>
+<%if  @page_design.nil? %>
+<%= link_to 'New Page design', new_page_design_path %>
+<%end%>
+</div>
+

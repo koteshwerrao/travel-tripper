@@ -1,0 +1,64 @@
+<div style="text-align:center">
+<%= form_for(@page_design) do |f| %>
+  <% if @page_design.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page_design.errors.count, "error") %> prohibited this page_design from being saved:</h2>
+
+      <ul>
+      <% @page_design.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="field">
+    <%= f.label :page_title %><br />
+    <%= f.text_field :page_title%>
+  </div>
+  <div class="field">
+    <%= f.label :font_family %><br />
+    <%= f.text_field :page_font%>
+  </div>
+  <div class="field">
+    <%= f.label :header_background_color %><br />
+    <%= f.text_field :header_bg_color%>
+  </div>
+
+  <div class="field">
+    <%= f.label :body_background_color %><br />
+    <%= f.text_field :body_bg_color%>
+  </div>
+
+  <div class="field">
+    <%= f.label :about_background_color %><br />
+    <%= f.text_field :about_bg_color%>
+  </div>
+
+  <div class="field">
+    <%= f.label :services_background_color %><br />
+    <%= f.text_field :services_bg_color%>
+  </div>
+
+  <div class="field">
+    <%= f.label :portfolio_background_color %><br />
+    <%= f.text_field :portfolio_bg_color%>
+  </div>
+
+   <div class="field">
+    <%= f.label :footer_backgroundg_color %><br />
+    <%= f.text_field :footer_bg_color%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit%>
+  </div>
+
+<%end%>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#page_design_header_bg_color,#page_design_body_bg_color,#page_design_about_bg_color,#page_design_services_bg_color,#page_design_portfolio_bg_color,#page_design_footer_bg_color").colorpicker().on('changeColor', function(ev) {
+      var color = ev.color.toHex();
+    });
+  });
+</script>
+
